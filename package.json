@@ -1,0 +1,81 @@
+{
+  "name": "gradient-border-react",
+  "version": "0.1.0",
+  "description": "Animated gradient border that flows around any element. A tiny, dependency-free React component for React 18 and 19.",
+  "keywords": [
+    "react",
+    "gradient",
+    "border",
+    "animation",
+    "animated-border",
+    "gradient-border",
+    "conic-gradient",
+    "react-component",
+    "ui",
+    "css"
+  ],
+  "author": "kea0811",
+  "license": "MIT",
+  "homepage": "https://github.com/kea0811/gradient-border-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kea0811/gradient-border-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kea0811/gradient-border-react/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "demo:dev": "pnpm -F demo dev",
+    "demo:build": "pnpm -F demo build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "jsdom": "^26.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "packageManager": "pnpm@10.28.1"
+}
