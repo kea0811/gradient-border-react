@@ -1,6 +1,6 @@
 {
   "name": "gradient-border-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Animated gradient border that flows around any element. A tiny, dependency-free React component for React 18 and 19.",
   "keywords": [
     "react",

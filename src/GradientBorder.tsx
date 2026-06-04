@@ -67,10 +67,9 @@ export const GradientBorder = forwardRef<HTMLDivElement, GradientBorderProps>(
         {glow ? (
           <span data-gradient-border-glow="" aria-hidden="true" style={styles.glow} />
         ) : null}
-        <div data-gradient-border-ring="" style={styles.ring}>
-          <div data-gradient-border-content="" style={styles.content}>
-            {children}
-          </div>
+        <div data-gradient-border-ring="" aria-hidden="true" style={styles.ring} />
+        <div data-gradient-border-content="" style={styles.content}>
+          {children}
         </div>
       </div>
     );

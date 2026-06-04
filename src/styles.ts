@@ -82,6 +82,10 @@ export function buildStyles(
   const outer: CSSProperties = {
     position: 'relative',
     display: 'inline-flex',
+    boxSizing: 'border-box',
+    // Padding reserves the gap the ring paints into. Content sits inside the
+    // content-box; the absolutely-positioned ring overlays the whole element.
+    padding: borderWidth,
     borderRadius: radius,
   };
 
@@ -97,9 +101,13 @@ export function buildStyles(
     pointerEvents: 'none',
   };
 
+  // The ring is now a SIBLING of content (not a parent). CSS `mask` clips the
+  // entire painting of the masked element including all descendants — when the
+  // ring wrapped the content the demo text was masked away along with it.
+  // Sibling + absolute keeps the mask scoped to the ring's own gradient paint.
   const ring: CSSProperties = {
-    position: 'relative',
-    display: 'inline-flex',
+    position: 'absolute',
+    inset: 0,
     boxSizing: 'border-box',
     padding: borderWidth,
     borderRadius: radius,
@@ -109,6 +117,7 @@ export function buildStyles(
     mask: MASK,
     maskComposite: 'exclude',
     animation,
+    pointerEvents: 'none',
   };
 
   const content: CSSProperties = {
