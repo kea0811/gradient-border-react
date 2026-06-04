@@ -12,13 +12,18 @@ import { buildStyles, injectKeyframes, type ResolvedStyles } from './styles';
  * static ring when the user prefers reduced motion.
  *
  * ```tsx
- * const { ring, content } = useGradientBorder({ colors: presets.sunset });
+ * const { outer, ring, content } = useGradientBorder({ colors: presets.sunset });
  * return (
- *   <div style={ring}>
+ *   <div style={outer}>
+ *     <div aria-hidden style={ring} />
  *     <div style={content}>Bring your own markup</div>
  *   </div>
  * );
  * ```
+ *
+ * The ring sits absolutely positioned over the outer wrapper so its `mask`
+ * doesn't propagate to (and clip) your content. Always render it as a sibling
+ * of your content inside `outer`, never as a parent.
  */
 export function useGradientBorder(options: GradientBorderOptions = {}): ResolvedStyles {
   const reducedMotion = usePrefersReducedMotion();
