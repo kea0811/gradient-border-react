@@ -253,6 +253,7 @@ code {
 .tile-inner {
   flex: 1;
   width: 100%;
+  color: var(--ink);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -265,6 +266,8 @@ code {
   font-size: 1.05rem;
   font-weight: 700;
   text-transform: capitalize;
+  color: var(--ink);
+  line-height: 1.2;
 }
 .tile-sub {
   font-family: 'JetBrains Mono', monospace;
