@@ -66,14 +66,15 @@ function Code({ children }: { children: string }) {
 
 /** Demonstrates composing the look onto your own element with the hook. */
 function HookPill() {
-  const { ring, content } = useGradientBorder({
+  const { outer, ring, content } = useGradientBorder({
     colors: presets.candy,
     radius: 999,
     borderWidth: 2,
     duration: 6,
   });
   return (
-    <div style={ring}>
+    <div style={outer}>
+      <div aria-hidden="true" style={ring} />
       <button type="button" className="hook-pill" style={content}>
         useGradientBorder()
       </button>

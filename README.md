@@ -95,9 +95,10 @@ you can compose the border onto any element you control:
 import { useGradientBorder, presets } from 'gradient-border-react';
 
 function FancyButton() {
-  const { ring, content } = useGradientBorder({ colors: presets.candy, radius: 999 });
+  const { outer, ring, content } = useGradientBorder({ colors: presets.candy, radius: 999 });
   return (
-    <div style={ring}>
+    <div style={outer}>
+      <div aria-hidden style={ring} />
       <button style={content}>Click me</button>
     </div>
   );
@@ -106,6 +107,10 @@ function FancyButton() {
 
 It returns `{ outer, glow, ring, content }` — all `React.CSSProperties`. `options` takes the same
 fields as the component props above.
+
+The `ring` is **absolutely positioned** inside `outer`, so render it as a **sibling** of your
+content — not a parent. (Wrapping content with the ring would propagate its CSS `mask` to your
+text and clip it away.)
 
 ### `presets` / `presetNames`
 
