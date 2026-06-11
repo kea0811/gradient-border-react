@@ -21,6 +21,10 @@ No CSS file to import, no canvas, no `requestAnimationFrame` — just a masked, 
 `conic-gradient` driven by a registered `@property`. One `<style>` of keyframes is injected once,
 and that's the whole runtime.
 
+## For AI coding agents
+
+Drop [`SKILL.md`](./SKILL.md) into your AI editor / Claude Code workspace and it learns how to use this library. Tells the agent when to reach for it, the install + canonical pattern, the public API, and the gotchas that are easy to miss.
+
 ## Install
 
 **From GitHub** (always works):
